@@ -3,42 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>ToDo List | Sign Up</title>
-        <script>
-        </script>   
+        <link rel="stylesheet" href="Assets/css/style.css" />
+
         <style type="text/css">
-            .navigation{
-
-            }
-            .main{
-                width:100%;
-
-            }
-            .profimage{
-                float:left; 
-                width: 500px;
-                margin-left: 20%;
-            }
-            .image{
-                width: 150 px;
-                margin: 20%; 
-
-            }
+            
            .details{
-                width: 80%;
+                width: 40%;
                 min-width: 320px;
-               	margin-left: auto;
-				margin-right:auto;
-				
-                color:white;
-                font-size:xx-large;
-                font-style: normal;
-				font-family:Arial, Helvetica, sans-serif;
-				border-style:double;
-				border-color:#FFF;
-				border-radius:20px;
-				border-width:thick;
-				
-
             }
             
 			.info{
@@ -49,9 +20,11 @@
 			}
 			.enterdata{
 				float:right;
+                width: 40%;
 			}
 			.option{
 				font-size:x-large;
+                float: left;
 			}
 			.buttons{
 				width:auto;
@@ -64,54 +37,103 @@
 				margin-right:auto;
 			}
 			.innercontainer{
-				margin:10%;
+				margin:5%;
+                width:90%;
 			}
+           @media only screen and (max-width: 480px){
+                .enterdata{
+                    float:left;
+                    width: 60%;
+                }
+                .details{
+                    width: 80%;
+                }
+                .innercontainer{
+                margin:4%;
+                width: 90%;
+
+                }
+                .enterdata{
+                    margin-top:20px;
+                    width: 100%;
+                }
+           }
+           @media only screen and (max-width: 720px){
+                .enterdata{
+                    float:left;
+                    width: 60%;
+                }
+                .details{
+                    width: 80%;
+                    margin:auto;
+                }
+                .innercontainer{
+                    margin:5%;
+                    width: 90%;
+                }
+                .enterdata{
+                    margin-top:20px;
+                    width: 100%;
+                }
+           }
+           @media only screen and (max-width: 800px){
+                .enterdata{
+                    float:left;
+                    width: 60%;
+                }
+                .details{
+                    width: 80%;
+                    margin:auto;
+                }
+                .innercontainer{
+                    margin:10%;
+                }
+                .enterdata{
+                    margin-top:20px;
+                    width: 100%;
+                }
+           }
         </style>    
         
     </head>
 
-    <body background="Assets/images/home.jpg" style="fill: all" >
-        <div class="navigation">
-            <div>
-                
-            </div>
-
-        </div>
+    <body background="Assets/images/home.jpg">
+        
         <div class="main">
         <!--<div class="profimage" >
             
         </div>
         -->
-            <div id="heading">
+            <div class="inmain">
                 <h1>Sign Up</h1>
             </div>
         </div>
         <div class="details">
-        <div class="innercontainer">
-            <div class="info">
-            	<sub class="option">Full Name:</sub> 
-                <input type="text" id="username" class="enterdata"/>
-            </div>
-            <div class="info">
-             	<sub class="option">
-            	Username: </sub>
-            	<input type="text" id="username" class="enterdata"/>
-            </div>
-            <div class="info">
-                <sub class="option">
-                Email: </sub><input type="text" id="username" class="enterdata"/>
-            </div>
-            <div class="info">
-                <sub class="option">
-                Password: </sub><input type="text" id="username" class="enterdata"/>
-            </div>
-            <div class="info">
-	            <sub class="option">
-    	        Confirm Password: </sub><input type="text" id="username" class="enterdata"/>
-            </div>
-            <a href="home.html">
-            <button class="buttons">Sign Up
-            </button></a>
+            <div class="innercontainer">
+                <div class="info">
+                	<em class="option">Full Name:</em> 
+                    <input type="text" id="username" class="enterdata"/>
+                </div><br/><br/>
+                <div class="info">
+                 	<em class="option">Username: </em>
+                	<input type="text" id="username" class="enterdata"/>
+                </div><br/><br/>
+         
+                <div class="info">
+                    <em class="option">Email: </em>
+                    <input type="text" id="username" class="enterdata"/>
+                </div><br/><br/>
+                <div class="info">
+                    <em class="option">Password: </em>
+                    <input type="text" id="username" class="enterdata"/>
+                </div><br/><br/>
+                <div class="info">
+    	            <em class="option">Confirm Password: </em>
+                    <input type="text" id="username" class="enterdata"/>
+                </div><br/><br/>
+                <a href="home.html">
+                <button class="buttons">Sign Up
+                </button></a>
             </div>
         </div>
 
