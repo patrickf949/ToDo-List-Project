@@ -11,12 +11,14 @@ def add_account(name, password):
 	print("Account created\n")
 	print("Enter")
 	print("1. To proceed with login")
-	print("2. To quit\n")
-	num = raw_input()
+	print("2.(or any other character) To quit\n")
+	num = input()
 	if num=='1':
 		print("\nHello {0}!\nYou are logged in".format(name))
+		print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 		return '1'
 	else:
+		print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 		return '0'
 	
 def login(name, password):
@@ -41,35 +43,39 @@ def login(name, password):
 		
 		else:
 			print("\nInvalid password")
-			num = raw_input("Press\n1. To Re enter only Password\n2. To Re enter all details\n3. To quit\n")
+			num = input("Press\n1. To Re enter only Password\n2. To Re enter all details\n3. To quit\n")
 			if num=='1':
-				password1=raw_input("Enter password: ")
+				password1=input("Enter password: ")
 				login(name,password1)
 			elif num=='2':
 				re_enter_details()
 			else:
 				print('Ts NOT OK to give up!')
+				print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 				return 0
 				
 	else:
 		print("\nInvalid username")
-		print("Press\n1. To Create a new account\n2. To Retry\n3. To quit\n")
-		num = raw_input()
+		print("Press\n1. To Create a new account\n2. To Retry\n3.(or any other character) To quit\n")
+		num = input()
 		print(num)
 		if num=='1':
 			add_account(name,password)
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 			return '1'
 		elif num=='2':
 			re_enter_details()
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 		else:
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 			return 0
 
 def re_enter_details():
 	#re enter your username and password
 	#param: n/a
 	#return: n/a
-	name1=raw_input('Enter username: ')
-	password1=raw_input('Enter password: ')
+	name1=input('Enter username: ')
+	password1=input('Enter password: ')
 	login(name1,password1)
 
 

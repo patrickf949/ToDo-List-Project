@@ -20,8 +20,8 @@ def manipulate_todo_list():
 	print("3. To Mark a Task as Finished")
 	print("4. To Delete a Task")
 	print("5. To Delete All Tasks")
-	print("6. Leave App")
-	num=raw_input()
+	print("6.(or any other character) Leave App")
+	num=input()
 
 	if num=='1':
 		#view all tasks
@@ -35,6 +35,7 @@ def manipulate_todo_list():
 		else:
 			print('No Tasks at the moment')
 			print('Please add more tasks to your todo list')
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 			manipulate_todo_list()
 	elif num=='2':#add tasks
 		add_tasks()
@@ -50,11 +51,13 @@ def manipulate_todo_list():
 		print('Press')
 		print('Y for yes')
 		print('Any other character for no')
-		decision=raw_input()
+		decision=input()
 		if decision=='y':
 			delete_all_tasks()
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 			manipulate_todo_list()
 		else:
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 			manipulate_todo_list()
 
 def add_tasks():
@@ -63,12 +66,12 @@ def add_tasks():
 	param: n/a
 	return: n/a
 	"""
-	task=raw_input('Enter Task to Add:')
+	task=input('Enter Task to Add:')
 	create_task(task)
 	print('\nEnter')
 	print('1. To Add another task')
 	print('2.(Or any other no) To Go to main menu')
-	num=raw_input()
+	num=input()
 	if num=='1':
 		add_tasks()
 	else:
@@ -86,6 +89,7 @@ def mark_finished_task():
 		#delete the selected task
 		if task_to_mark<=(len(todo_list)) and task_to_mark>0: 
 			mark_as_finished(todo_list[task_to_mark-1])
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 			manipulate_todo_list()
 		else:
 			#if integer is not listed
@@ -94,11 +98,14 @@ def mark_finished_task():
 	elif task_to_kill=='Add tasks to your to do list':
 		#if todo list is empty
 		print(task_to_mark)
+		print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 		manipulate_todo_list()
 	else:
 		#if user inputs unnecessary data
 		print('Your input is invalid')
+		print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 		mark_finished_task()
+
 	
 
 
@@ -147,25 +154,26 @@ def check_todolist():
 			i+=1
 		
 		print("Enter the number of the todo list you would like to manipulate")
-		num=raw_input()
+		num=input()
 		index=int(num)
 		return index
 
 	else:
 		#if todo list is empty
 		print('Your to do list is empty')
+		print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 		return 'Add tasks to your to do list'
 
 def start_application():
 	print("Press")
 	print("1. To Log in To Your account")
 	print("2. To Sign Up/Create a new Account")
-	print("3. or any other character to bounce")
-	num= raw_input()
+	print("3. (or any other character) to bounce")
+	num= input()
 	if num=='1':
 		#login
-		name=raw_input('Enter your username: ')
-		password= raw_input('Enter your password: ')
+		name=input('Enter your username: ')
+		password= input('Enter your password: ')
 		
 		num1=login(name,password)
 		if num1=='1':
@@ -173,8 +181,8 @@ def start_application():
 		
 	elif num=='2':
 		#signup
-		name=raw_input('Enter your desired username: ')
-		password= raw_input('Enter your desired password: ')
+		name=input('Enter your desired username: ')
+		password= input('Enter your desired password: ')
 		num1=add_account(name,password)
 		if num1=='1':
 			manipulate_todo_list()
@@ -184,6 +192,7 @@ def start_application():
 
 
 if __name__=="__main__":
+	print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 	start_application()
 	#Allow person to input name and password
 	#
@@ -209,8 +218,8 @@ if __name__=="__main__":
 	"""
 
 # def enter_details():
-# 	name=raw_input('Enter your username: ')
-# 	password= raw_input('Enter your password: ')
+# 	name=input('Enter your username: ')
+# 	password= input('Enter your password: ')
 
 # 	return name,password
 

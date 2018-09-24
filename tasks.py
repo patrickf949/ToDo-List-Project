@@ -7,8 +7,10 @@ def create_task(task):
 	#param:
 	#return:
 	todo_list.append(task)
+	print("Your todo list")
 	for i in todo_list:
 		print(i)
+	print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
 
 def delete_task(task):
@@ -16,7 +18,8 @@ def delete_task(task):
 	#param:
 	#return:
 	todo_list.remove(task)
-
+	print("{0} task has been removed from your todolist".format(task))
+	print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 
 def mark_as_finished(task):
 	#Append the string label '[finished]' at the end of the task
@@ -27,12 +30,13 @@ def mark_as_finished(task):
 	if(task in todo_list):
 		if(task.endswith('[finished]')):
 			print('Task already marked as complete')
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 		else:
 			todo_list.remove(task)
 			task += '[finished]'
 			todo_list.append(task)
 			print('{0} {1}'.format('Marked', task))
-
+			print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
 
 
@@ -44,7 +48,7 @@ def delete_all_tasks():
 	del todo_list[:]
 	print('To Do List has been emptied') 
 	print('All your tasks are caput')
-
+	print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 # create_task("Go to barber's")
 
 # create_task("Go to Court")
