@@ -8,6 +8,33 @@ from accounts import *
 #imports the function 
 
 
+
+#start assign client information
+
+
+def get_client_todo_list(name):
+	"""
+	To get specified client todos
+	param: name of client
+	return: n/a
+	"""
+	assign_todolist(client_todos[name])
+	#todo_list =client_todos.get(name)
+	
+
+
+def save_client_todolist():
+	"""
+	Save the todo list of the client currently logged in
+	param:n/a
+	return: n/a
+	"""
+	save_client_info(todo_list)
+	print(todo_list)
+#end assign client information
+
+
+
 #manipulation of todolist
 def manipulate_todo_list():
 	'''
@@ -31,6 +58,7 @@ def manipulate_todo_list():
 		if todo_list != []:
 			a=1
 			print('------------------------------------------------------------------------------------------------------\n')
+			print('Your To Do List')
 			for todo in todo_list:
 				print('{0} {1}'.format(a,todo))
 				a+=1
@@ -65,7 +93,14 @@ def manipulate_todo_list():
 			print('-------------------------------------------------------------------------------\n')
 			manipulate_todo_list()
 	elif num=='6':
+		print(current_clientname)
+		save_client_todolist()
 		start_application()
+	
+	else:
+		print('invalid input.\nPlease enter one of the numbers that appear on the screen, Thankyou!')
+		print('-------------------------------------------------------------------------------\n')
+		manipulate_todo_list()
 
 def add_tasks():
 	"""
@@ -181,6 +216,7 @@ def check_todolist():
 
 #start application[Login, account]
 def start_application():
+	print(todo_list)
 	print('------------------------------------------------------------------------------------------------------\n')
 	print("Press")
 	print("1. To Log in To Your account")
@@ -189,13 +225,18 @@ def start_application():
 	num= input()
 	if num=='1':
 		#login
+		print(current_clientname)
 		name=input('Enter your username: ')
 		password= input('Enter your password: ')
 		print('------------------------------------------------------------------------------------------------------\n')
 		
 		num1=login(name,password)
+
 		print(num1)
+		print(current_clientname)
 		if num1=='1':
+			print(current_clientname)
+			get_client_todo_list(current_clientname[0])
 			manipulate_todo_list()
 		else:
 			start_application()
@@ -207,6 +248,10 @@ def start_application():
 		num1=add_account(name,password)
 		if num1=='1':
 			print('------------------------------------------------------------------------------------------------------\n')
+			print(current_clientname)
+			print(todo_list)
+			get_client_todo_list(current_clientname[0])
+			print(todo_list)
 			manipulate_todo_list()
 		else:
 			print('------------------------------------------------------------------------------------------------------\n')
@@ -217,7 +262,6 @@ def start_application():
 
 
 if __name__=="__main__":
-	
 	start_application()
 	#Allow person to input name and password
 	#

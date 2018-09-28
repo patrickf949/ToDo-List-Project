@@ -1,3 +1,4 @@
+
 #This file manages the todo list
 todo_list =[]
 
@@ -11,6 +12,7 @@ def create_task(task):
 	print("Your todo list")
 	for i in todo_list:
 		print(i)
+	
 	print('------------------------------------------------------------------------------------------------------\n')
 
 
@@ -20,6 +22,7 @@ def delete_task(task):
 	#return:
 	todo_list.remove(task)
 	print("{0} task has been removed from your todolist".format(task))
+	
 	print('------------------------------------------------------------------------------------------------------\n')
 
 def mark_as_finished(task):
@@ -39,7 +42,7 @@ def mark_as_finished(task):
 			todo_list.append(task)
 			print('{0} {1}'.format('Marked', task))
 			print('------------------------------------------------------------------------------------------------------\n')
-
+	
 
 
 
@@ -51,6 +54,7 @@ def delete_all_tasks():
 	print('To Do List has been emptied') 
 	print('All your tasks are caput')
 	print('------------------------------------------------------------------------------------------------------\n')
+	
 # create_task("Go to barber's")
 
 # create_task("Go to Court")
@@ -59,3 +63,19 @@ def delete_all_tasks():
 # mark_as_finished("Go to Court")
 # print (todo_list)
 
+def assign_todolist(client_todolist):
+	"""
+	Assigns working todo list to the logged in client
+	param: current client todo list
+	return:n/a
+	"""
+	a=client_todolist.copy()
+	i=0
+	while i<=len(a)-1 and i>=0:
+		# print(a[i])
+		todo_list.append(a[i])
+		i+=1
+	print("the ting")
+	print(todo_list)
+	
+	
